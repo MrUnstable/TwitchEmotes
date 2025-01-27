@@ -2946,5 +2946,33 @@ YEP
 ----
 Twitch Emotes V3.01 - Tauri Gang
 ----
+Backport release 
+Added TauriWoW,Savix,JokerD Emotes
 
+Guzu
+PogCrazy
+SavixALOO
+SavixRizz
+SNIFFA
+TooBased
+Cinema
+FluteTime
+GIGAChad
+GIGAKEKW
+Gooned
+Gooning
+KAK
+KEKBASED
+KEKLeave
+KEKShook
+o7
+ok
+ReallyNah
+ReallyNice
+Thinking
+Thinking2
+xdd
+xdd666
+Chris
+LegionWhen
 ====
