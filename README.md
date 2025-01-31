@@ -12,7 +12,6 @@ If you'd like to request more emotes, please suggest them in the Issues and if t
 There's a minimap dropdown that has a preview of some emotes, but typing an emote as you would on Twitch or Discord with a colon prefix will create a dropdown in your chat that has access to all emotes in the AddOn.
 
 This works by using Tab and Shift-Tab to rotate through options, hit colon again to select, or Enter for quick send.
-
  
 
 Shift-clicking the minimap also opens a statistics page, where you can see your most used and viewed emotes.
@@ -25,6 +24,10 @@ If you experience green boxes, please reinstall the AddOn; historically this is 
 
 If you use experience issues in WIM, disable emoji in WIM.
 
- 
 
 This addon does not access the Twitch API and thus emotes have to be added manually. 
+# Download [latest release](https://github.com/MrUnstable/TauriEmotes/releases/)!
+![mouseover-shiftclick](https://github.com/user-attachments/assets/32b78e42-20c9-4cb8-8544-13916d86eb17)
+![normal-emotes](https://github.com/user-attachments/assets/8caae7b8-2dd4-4809-83ed-795cfe96890e)
+![statistics](https://github.com/user-attachments/assets/f3d871b3-fd47-4ab4-a7af-c2430354416b)
+
