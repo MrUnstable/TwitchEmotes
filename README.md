@@ -5,7 +5,7 @@ Simply type peepoHappy and peepoHappy will be in your chat, no Kapp.
 
  
 
-If you'd like to request more emotes, please suggest them in the Issues and if they're good I'll consider adding them!
+If you'd like to request more emotes, please suggest them in the [Issues](https://github.com/MrUnstable/TauriEmotes/issues) and if they're good I'll consider adding them!
 
  
 
