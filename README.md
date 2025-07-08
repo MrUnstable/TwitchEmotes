@@ -20,7 +20,7 @@ If you see an emote you like and are curious what it was, you can hover over an 
 
   
 
-If you experience green boxes, please reinstall the AddOn; historically this is an issue with AddOn managers having issues downloading all image files.
+If you experience flickering emotes when chat is fading, sadly my monke brain didn't fix it yet kekw.
 
 If you use experience issues in WIM, disable emoji in WIM.
 
