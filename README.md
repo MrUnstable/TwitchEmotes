@@ -18,7 +18,7 @@ If you'd like to request more emotes, please suggest them in the [Issues](https:
 - Shift-clicking the minimap also opens a statistics page, where you can see your most used and viewed emotes.
 
 - If you see an emote you like and are curious what it was, you can hover over an emote to see its name or shift-click to repost it in your chat.
-### 
+##
 - If you experience flickering emotes when chat is fading, sadly my monke ahh didn't fix it yet kekw.
 
 - If you use experience issues in WIM, disable emoji in WIM.
