@@ -1,11 +1,9 @@
-# Tauri-Emotes
-Shows Twitch emotes in your chat by typing them as you would into Twitch.
-
-Simply type peepoHappy and peepoHappy will be in your chat, no Kapp.
-
- 
-
-If you'd like to request more emotes, please suggest them in [Issues](https://github.com/MrUnstable/TwitchEmotes/issues) and if they're good I'll consider adding them!
+# Twitch Emotes
+> Shows Twitch emotes in your chat by typing them as you would into Twitch.
+> 
+> Simply type peepoHappy and peepoHappy will be in your chat, no Kapp.
+> 
+> If you'd like to request more emotes, please suggest them in [Issues](https://github.com/MrUnstable/TwitchEmotes/issues) and if they're good I'll consider adding them!
 
  
  ## Features
@@ -16,14 +14,14 @@ If you'd like to request more emotes, please suggest them in [Issues](https://gi
 - Shift-clicking the minimap also opens a statistics page, where you can see your most used and viewed emotes.
 
 - If you see an emote you like and are curious what it was, you can hover over an emote to see its name or shift-click to repost it in your chat.
-> [!NOTE]
+> [!IMPORTANT]
 > If you experience issues in WIM, disable emoji in WIM.
 > 
 > This addon does not access the Twitch API and thus emotes have to be added manually.
 > 
 > On every ~100 added Emotes a new [Release](https://github.com/MrUnstable/TwitchEmotes/releases) will be pushed.
 
-> [!IMPORTANT]
+> [!NOTE]
 > If you experience flickering on animated emotes when chat is fading out, sadly my monke ahh didn't find a way to fix it yet kekw.(Would appreciate any help tho ^.^)
 ##
 ![mouseover-shiftclick](https://github.com/user-attachments/assets/32b78e42-20c9-4cb8-8544-13916d86eb17)
