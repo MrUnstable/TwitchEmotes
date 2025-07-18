@@ -8,24 +8,23 @@ Simply type peepoHappy and peepoHappy will be in your chat, no Kapp.
 If you'd like to request more emotes, please suggest them in the [Issues](https://github.com/MrUnstable/TauriEmotes/issues) and if they're good I'll consider adding them!
 
  
+ ## Features
 
-There's a minimap dropdown that has a preview of some emotes, but typing an emote as you would on Twitch or Discord with a colon prefix will create a dropdown in your chat that has access to all emotes in the AddOn.
-
-This works by using Tab and Shift-Tab to rotate through options, hit colon again to select, or Enter for quick send.
+- There's a minimap dropdown that has a preview of some emotes, but typing an emote as you would on Twitch or Discord with a colon ":" prefix will create a dropdown in your chat that has access to all emotes in the AddOn.
+ 
+  This works by using Tab and Shift-Tab to rotate through options, hit colon again to select, or Enter for quick send.
  
 
-Shift-clicking the minimap also opens a statistics page, where you can see your most used and viewed emotes.
+- Shift-clicking the minimap also opens a statistics page, where you can see your most used and viewed emotes.
 
-If you see an emote you like and are curious what it was, you can hover over an emote to see its name or shift-click to repost it in your chat.
+- If you see an emote you like and are curious what it was, you can hover over an emote to see its name or shift-click to repost it in your chat.
+### 
+- If you experience flickering emotes when chat is fading, sadly my monke ahh didn't fix it yet kekw.
 
-  
-
-If you experience flickering emotes when chat is fading, sadly my monke brain didn't fix it yet kekw.
-
-If you use experience issues in WIM, disable emoji in WIM.
+- If you use experience issues in WIM, disable emoji in WIM.
 
 
-This addon does not access the Twitch API and thus emotes have to be added manually. 
+- This addon does not access the Twitch API and thus emotes have to be added manually.
 # Download [latest release](https://github.com/MrUnstable/TauriEmotes/releases/)!
 ![mouseover-shiftclick](https://github.com/user-attachments/assets/32b78e42-20c9-4cb8-8544-13916d86eb17)
 ![normal-emotes](https://github.com/user-attachments/assets/8caae7b8-2dd4-4809-83ed-795cfe96890e)
