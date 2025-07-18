@@ -17,12 +17,15 @@ If you'd like to request more emotes, please suggest them in [Issues](https://gi
 
 - If you see an emote you like and are curious what it was, you can hover over an emote to see its name or shift-click to repost it in your chat.
 > [!NOTE]
-> If you experience flickering emotes when chat is fading out, sadly my monke ahh didn't find a way to fix it yet kekw.
-> 
 > If you experience issues in WIM, disable emoji in WIM.
 > 
 > This addon does not access the Twitch API and thus emotes have to be added manually.
-# Download [latest release](https://github.com/MrUnstable/TwitchEmotes/releases)!
+> 
+> On every ~100 added Emotes a new [Release](https://github.com/MrUnstable/TwitchEmotes/releases) will be pushed.
+
+> [!IMPORTANT]
+> If you experience flickering on animated emotes when chat is fading out, sadly my monke ahh didn't find a way to fix it yet kekw.(Would appreciate any help tho ^.^)
+##
 ![mouseover-shiftclick](https://github.com/user-attachments/assets/32b78e42-20c9-4cb8-8544-13916d86eb17)
 ![normal-emotes](https://github.com/user-attachments/assets/8caae7b8-2dd4-4809-83ed-795cfe96890e)
 ![statistics](https://github.com/user-attachments/assets/f3d871b3-fd47-4ab4-a7af-c2430354416b)
