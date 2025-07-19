@@ -19,7 +19,7 @@
 > 
 > This addon does not access the Twitch API and thus emotes have to be added manually.
 > 
-> On every ~100 added Emotes a new [Release](https://github.com/MrUnstable/TwitchEmotes/releases) will be pushed.
+> On every ~100 added Emotes(a month or two) a new [Release](https://github.com/MrUnstable/TwitchEmotes/releases) will be pushed.
 
 > [!NOTE]
 > If you experience flickering on animated emotes when chat is fading out, sadly my monke ahh didn't find a way to fix it yet kekw.(Would appreciate any help tho ^.^)
