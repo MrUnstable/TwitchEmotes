@@ -1,8 +1,8 @@
 ## Interface: 70300
 ## Title: |TInterface\Addons\TwitchEmotes\Emotes\Pepes\EZ:0|tTauriTwitchEmotes|TInterface\Addons\TwitchEmotes\Emotes\Pepes\EZ:0|t
 ## Author: Ren - Illidan (US) & Jons - MirageRaceway (EU)
-## Notes: Adds popular Twitch & Discord emotes to your chat.|nDeveloped by Ren - Illidan (US) & Jons - Golemagg (EU).|nBackport by Reckwell - Evermoon (TauriWoW). |nUpdates on https://github.com/MrUnstable/TauriEmotes
-## Version: v3.01
+## Notes: Adds popular Twitch & Discord emotes to your chat.|nDeveloped by Ren - Illidan (US) & Jons - Golemagg (EU).|nBackport by Reckwell - Evermoon (TauriWoW). |nUpdates on https://github.com/MrUnstable/TwitchEmotes
+## Version: v0.01
 ## SavedVariables: Emoticons_Settings, TwitchEmoteStatistics
 ## OptionalDeps: LibStub, LibUIDropDownMenu
 

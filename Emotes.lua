@@ -1415,13 +1415,12 @@ TwitchEmotes_defaultpack = {
     ["ALOO"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\ALOO.tga:28:28",
     ["AMBATUKAM"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AMBATUKAM.tga:28:28",
     ["ankhaBounce"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\ankhaBounce.tga:28:28",
-    ["Aquamarine"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Aquamarine.tga:28:28",
     ["Arfus"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Arfus.tga:28:28",
     ["AstolfoBounce"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AstolfoBounce.tga:28:28",
     ["Awkward"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Awkward.tga:28:28",
     ["badvibes"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\badvibes.tga:28:28",
     ["BASED"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BASED.tga:28:28",
-    ["baseg"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\baseg.tga:28:28",
+    ["Baseg"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Baseg.tga:28:28",
     ["bedlole"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\bedlole.tga:28:28",
     ["BEGGING"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BEGGING.tga:28:28",
     ["BLEHHHH"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BLEHHHH.tga:28:28",
@@ -1453,7 +1452,6 @@ TwitchEmotes_defaultpack = {
     ["docPls"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\docPls.tga:28:28",
     ["Dog"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Dog.tga:28:28",
     ["donkGiggles"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\donkGiggles.tga:28:28",
-    ["DougDimmadomeOwnerOfTheDimmsdaleDimmadomeLookingOutHisDimmsdaleDimmadome"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\DougDimmadomeOwnerOfTheDimmsdaleDimmadomeLookingOutHisDimmsdaleDimmadome.tga:28:28",
     ["DUGA"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\DUGA.tga:28:28",
     ["duh"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\duh.tga:28:28",
     ["Erm"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Erm.tga:28:28",
@@ -1470,9 +1468,6 @@ TwitchEmotes_defaultpack = {
     ["glorprave"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\glorprave.tga:28:28",
     ["glorpShakey"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\glorpShakey.tga:28:28",
     ["Retail"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Retail.tga:28:28",
-    ["AlienPls3"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AlienPls3.tga:28:28",
-    ["AlienPls3"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AlienPls3.tga:28:28",
-    ["AlienPls3"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AlienPls3.tga:28:28",
     -- Savix
     ["Guzu"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\Guzu.tga:28:28",
     ["umm"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\umm.tga:28:28",
@@ -1491,9 +1486,11 @@ TwitchEmotes_defaultpack = {
     ["Oh"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\Oh.tga:28:28",
     ["Looking"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\Looking.tga:28:28",
     ["LookingR"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\LookingR.tga:28:28",
-    ["Baseg"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\Baseg.tga:28:28",
+    ["baseg"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\baseg.tga:28:28",
     ["xalatath"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\xalatath.tga:32:32",
     ["xalatathW"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\xalatath.tga:XLARGE",
+    ["Jorkin"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\Jorkin.tga:28:28",
+    ["JorkinR"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\JorkinR.tga:28:28",
     -- JoshOG
     ["weed1"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JoshOG\\weed1.tga:28:28",
     ["weed2"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JoshOG\\weed2.tga:28:28",
@@ -3768,8 +3765,10 @@ TwitchEmotes_defaultpack = {
     ["typegChill"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\typeg\\typegChill.tga:28:28",
     ["typegBricked"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\typeg\\typegBricked.tga:28:28",
     -- TauriWoW
-    ["Chris"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Chris.tga:32:32",
+    ["ChrisGOAT"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\ChrisGOAT.tga:32:32",
     ["LegionWhen"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\LegionWhen.tga:32:32",
+    ["Higieye"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Higieye.tga:32:32",
+    ["Higivibe"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Higivibe.tga:32:32",
 };
 
 TwitchEmotes_animation_metadata = {
@@ -3897,6 +3896,9 @@ TwitchEmotes_animation_metadata = {
     ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Retail.tga"] = {["nFrames"] = 175, ["frameWidth"] = 64, ["frameHeight"] = 32, ["imageWidth"] = 64, ["imageHeight"] = 8192, ["framerate"] = 35},
     ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AINTNAURWAY.tga"] = {["nFrames"] = 69, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 4096, ["framerate"] = 12},
     ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AINTNOWAY.tga"] = {["nFrames"] = 69, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 4096, ["framerate"] = 12},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Higivibe.tga"] = {["nFrames"] = 9, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 512, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\Jorkin.tga"] = {["nFrames"] = 5, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"]=32, ["imageHeight"]=256, ["framerate"] = 25},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\JorkinR.tga"] = {["nFrames"] = 5, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"]=32, ["imageHeight"]=256, ["framerate"] = 25},
 }
 
 TwitchEmotes_emoticons = {
@@ -8001,12 +8003,16 @@ TwitchEmotes_emoticons = {
     ["Oh"] = "Oh",
     ["Looking"] = "Looking",
     ["LookingR"] = "LookingR",
-    ["Baseg"] = "Baseg",
+    ["baseg"] = "baseg",
     ["xalatath"] = "xalatath",
     ["xalatathW"] = "xalatathW",
+    ["Jorkin"] = "Jorkin",
+    ["JorkinR"] = "JorkinR",
     -- TauriWoW
-    ["Chris"] = "Chris",
+    ["ChrisGOAT"] = "ChrisGOAT",
     ["LegionWhen"] = "LegionWhen",
+    ["Higieye"] = "Higieye",
+    ["Higivibe"] = "Higivibe",
     -- JokerdTV
     ["KEKShook"] = "KEKShook",
     ["ReallyNice"] = "ReallyNice",
@@ -8032,6 +8038,7 @@ TwitchEmotes_emoticons = {
     ["Retail"] = "Retail",
     ["AINTNAURWAY"] = "AINTNAURWAY",
     ["AINTNOWAY"] = "AINTNOWAY",
+    ["Baseg"] = "Baseg",
 };
 
 TwitchEmotes_ExcludedSuggestions = {
