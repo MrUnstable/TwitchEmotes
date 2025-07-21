@@ -3270,7 +3270,6 @@ LeoHug
 intjSus
 waiting
 intjShake
-CatFat
 ----
 Twitch Emotes V0.01 - Tauri Gang
 ----
@@ -3312,7 +3311,7 @@ Monka
 omEmon
 NOOO
 WAJAJA
-oh
+Oh
 Looking
 LookingR
 Baseg
@@ -3328,3 +3327,20 @@ AINTNAURWAY
 AINTNOWAY
 xario
 baseg
+Tauri
+AlienPls3
+ALOO
+AMBATUKAM
+ankhaBounce
+Arfus
+AstolfoBounce
+Awkward
+badvibes
+BASED
+bedlole
+BEGGING
+BLEHHHH
+Blush
+blushie
+bongTime
+BOUGHT

@@ -1413,7 +1413,7 @@ TwitchEmotes_defaultpack = {
     ["AINTNOWAY"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AINTNOWAY.tga:28:28",
     ["AlienPls3"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AlienPls3.tga:28:28",
     ["ALOO"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\ALOO.tga:28:28",
-    ["AMBATUKAM"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AMBATUKAM.tga:28:28",
+    ["AMBATUKAM"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AMBATUKAM.tga:32:32",
     ["ankhaBounce"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\ankhaBounce.tga:28:28",
     ["Arfus"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Arfus.tga:28:28",
     ["AstolfoBounce"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AstolfoBounce.tga:28:28",
@@ -1423,11 +1423,12 @@ TwitchEmotes_defaultpack = {
     ["Baseg"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Baseg.tga:28:28",
     ["bedlole"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\bedlole.tga:28:28",
     ["BEGGING"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BEGGING.tga:28:28",
-    ["BLEHHHH"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BLEHHHH.tga:28:28",
-    ["Blush"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Blush.tga:28:28",
+    ["BLEHHHH"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BLEHHHH.tga:32:32",
+    ["BLEHHHHW"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BLEHHHH.tga:LARGE",
+    ["Blush"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Blush.tga:32:32",
+    ["blushie"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\blushie.tga:32:32",
     ["bongTime"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\bongTime.tga:28:28",
-    ["BOUGHT"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BOUGHT.tga:28:28",
-    ["BoysBeingBoys"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BoysBeingBoys.tga:28:28",
+    ["BOUGHT"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BOUGHT.tga:28:62:0:0:96:32:0:96:0:32",
     ["BRUH"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BRUH.tga:28:28",
     ["Bruheg"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Bruheg.tga:28:28",
     ["Bruhge"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Bruhge.tga:28:28",
@@ -3769,6 +3770,7 @@ TwitchEmotes_defaultpack = {
     ["LegionWhen"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\LegionWhen.tga:32:32",
     ["Higieye"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Higieye.tga:32:32",
     ["Higivibe"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Higivibe.tga:32:32",
+    ["Tauri"] = "Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Tauri.tga:28:28",
 };
 
 TwitchEmotes_animation_metadata = {
@@ -3899,6 +3901,16 @@ TwitchEmotes_animation_metadata = {
     ["Interface\\AddOns\\TwitchEmotes\\Emotes\\TauriWoW\\Higivibe.tga"] = {["nFrames"] = 9, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 512, ["framerate"] = 18},
     ["Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\Jorkin.tga"] = {["nFrames"] = 5, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"]=32, ["imageHeight"]=256, ["framerate"] = 25},
     ["Interface\\AddOns\\TwitchEmotes\\Emotes\\Savix\\JorkinR.tga"] = {["nFrames"] = 5, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"]=32, ["imageHeight"]=256, ["framerate"] = 25},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AlienPls3.tga"] = {["nFrames"] = 73, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 4096, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AMBATUKAM.tga"] = {["nFrames"] = 92, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 4096, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\ankhaBounce.tga"] = {["nFrames"] = 13, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 512, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\AstolfoBounce.tga"] = {["nFrames"] = 12, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 512, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\Awkward.tga"] = {["nFrames"] = 81, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 4096, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\badvibes.tga"] = {["nFrames"] = 90, ["frameWidth"] = 64, ["frameHeight"] = 32, ["imageWidth"] = 64, ["imageHeight"] = 4096, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BASED.tga"] = {["nFrames"] = 82, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 4096, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\bedlole.tga"] = {["nFrames"] = 9, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 512, ["framerate"] = 5},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\BEGGING.tga"] = {["nFrames"] = 251, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 8192, ["framerate"] = 18},
+    ["Interface\\AddOns\\TwitchEmotes\\Emotes\\JokerD\\bongTime.tga"] = {["nFrames"] = 41, ["frameWidth"] = 32, ["frameHeight"] = 32, ["imageWidth"] = 32, ["imageHeight"] = 2048, ["framerate"] = 18},
 }
 
 TwitchEmotes_emoticons = {
@@ -8013,6 +8025,7 @@ TwitchEmotes_emoticons = {
     ["LegionWhen"] = "LegionWhen",
     ["Higieye"] = "Higieye",
     ["Higivibe"] = "Higivibe",
+    ["Tauri"] = "Tauri",
     -- JokerdTV
     ["KEKShook"] = "KEKShook",
     ["ReallyNice"] = "ReallyNice",
@@ -8039,8 +8052,25 @@ TwitchEmotes_emoticons = {
     ["AINTNAURWAY"] = "AINTNAURWAY",
     ["AINTNOWAY"] = "AINTNOWAY",
     ["Baseg"] = "Baseg",
+    ["AlienPls3"] = "AlienPls3",
+    ["ALOO"] = "ALOO",
+    ["AMBATUKAM"] = "AMBATUKAM",
+    ["ankhaBounce"] = "ankhaBounce",
+    ["Arfus"] = "Arfus",
+    ["AstolfoBounce"] = "AstolfoBounce",
+    ["Awkward"] = "Awkward",
+    ["badvibes"] = "badvibes",
+    ["BASED"] = "BASED",
+    ["bedlole"] = "bedlole",
+    ["BEGGING"] = "BEGGING",
+    ["BLEHHHH"] = "BLEHHHH",
+    ["BLEHHHHW"] = "BLEHHHHW",
+    ["Blush"] = "Blush",
+    ["blushie"] = "blushie",
+    ["bongTime"] = "bongTime",
+    ["BOUGHT"] = "BOUGHT",
 };
 
 TwitchEmotes_ExcludedSuggestions = {
-    "Jons", ":jons:", ":twoofakind:", "HammersArk", "HammersNoArk", "Shelia", "LULWWW", ":mo:", ":penguin:", "Gerdlerk1", "Gerdlerk2", "Gerdlerk3", "Gerdlerk4", "Ninomage", "NickyQW","gachiSLAPW","peepoMadW","FeelsBadManW","FeelsGoodManW","FeelsgoodManW","FeelsOkayManW","FeelsSleepyManW","PepeHandsW","PepeJAMW","PepeOKW","PepeNotOKW","WeirdWW","peepoLoveW","peepoPlotW","PepeMW","FeelsCryManW","monakW","PepeMStacheW","LovepeepoW","WeirdJAMW","peepoExitW","FeelsLoveManW","HeartatoW","ANGERYW","KEKWW","PogWartsW",":epicW:","Lyeasy","LyeREE","LyeCute","LyEZ","LyeShrug",":smook:","SmookDead","SmookEvil","SmookGasm","SmookMad","SmookNervous","SmookSad","SmookSpook","SmookWeird","SmookWink", "xalatathW", "SmookSmile", "unholysip"
+    "Jons", ":jons:", ":twoofakind:", "HammersArk", "HammersNoArk", "Shelia", "LULWWW", ":mo:", ":penguin:", "Gerdlerk1", "Gerdlerk2", "Gerdlerk3", "Gerdlerk4", "Ninomage", "NickyQW","gachiSLAPW","peepoMadW","FeelsBadManW","FeelsGoodManW","FeelsgoodManW","FeelsOkayManW","FeelsSleepyManW","PepeHandsW","PepeJAMW","PepeOKW","PepeNotOKW","WeirdWW","peepoLoveW","peepoPlotW","PepeMW","FeelsCryManW","monakW","PepeMStacheW","LovepeepoW","WeirdJAMW","peepoExitW","FeelsLoveManW","HeartatoW","ANGERYW","KEKWW","PogWartsW",":epicW:","Lyeasy","LyeREE","LyeCute","LyEZ","LyeShrug",":smook:","SmookDead","SmookEvil","SmookGasm","SmookMad","SmookNervous","SmookSad","SmookSpook","SmookWeird","SmookWink", "xalatathW", "BLEHHHHW", "SmookSmile", "unholysip"
 }
