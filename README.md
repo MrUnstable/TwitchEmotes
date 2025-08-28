@@ -22,7 +22,7 @@
 > On every ~100 added Emotes(a month or two) a new [Release](https://github.com/MrUnstable/TwitchEmotes/releases) will be pushed.
 
 > [!NOTE]
-> If you experience flickering on animated emotes when chat is fading out, sadly my monke ahh didn't find a way to fix it yet kekw.(Would appreciate any help tho ^.^)
+> If you experience flickering on animated emotes when chat is fading out, sadly my monke ahh didn't find a way to fix it yet kekw.(It also happens on retail version but way less frequent)
 ##
 ![mouseover-shiftclick](https://github.com/user-attachments/assets/32b78e42-20c9-4cb8-8544-13916d86eb17)
 ![normal-emotes](https://github.com/user-attachments/assets/8caae7b8-2dd4-4809-83ed-795cfe96890e)
