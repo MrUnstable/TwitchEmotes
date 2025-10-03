@@ -3276,6 +3276,7 @@ Twitch Emotes V0.01 - Tauri Gang
 Backport release 
 Added Emotes up to [Twitch Emotes V2.62.4 January update 11.0.7] and some TauriWoW,Savix,JokerD... emotes
 Added support/override for Wide Animated Emotes
+Emotes.lua duplicates cleanup
 
 Guzu
 PogCrazy
@@ -3344,3 +3345,13 @@ Blush
 blushie
 bongTime
 BOUGHT
+Bruh
+Bruhge
+Bruheg
+buh
+Cameraman
+CANTSTOPKEK
+WHAT
+catPls
+CaughtIn4K
+CHADDING
