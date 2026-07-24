@@ -3412,3 +3412,5 @@ kekU
 KEKWSPIN
 kekYO
 LICKA
+--
+Whisper Window Patch - Sometimes whisper sending animated emtes in whisper window would freeze it, this is fixed now
