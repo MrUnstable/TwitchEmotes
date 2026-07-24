@@ -1,15 +1,32 @@
 local TWITCHEMOTES_TimeSinceLastUpdate = 0
 local TWITCHEMOTES_T = 0;
+local function TwitchEmotesAnimator_UpdateChatFrame(chatFrame)
+    if (chatFrame == nil) then
+        return
+    end
+    if (TwitchEmotes_HookChatFrameHyperlinks ~= nil) then
+        TwitchEmotes_HookChatFrameHyperlinks(chatFrame);
+    end
+    if (chatFrame:IsShown() and chatFrame.visibleLines ~= nil) then
+        for _, visibleLine in ipairs(chatFrame.visibleLines) do
+            if (visibleLine.messageInfo ~= TwitchEmotes_HoverMessageInfo) then
+                TwitchEmotesAnimator_UpdateEmoteInFontString(visibleLine, 28, 28);
+            end
+        end
+    end
+end
 
 function TwitchEmotesAnimator_OnUpdate(self, elapsed)
-
     if (TWITCHEMOTES_TimeSinceLastUpdate >= 0.033) then
         -- Update animated emotes in chat windows
-        for i = 1, NUM_CHAT_WINDOWS do
-            for _, visibleLine in ipairs(_G["ChatFrame" .. i].visibleLines) do
-                if(_G["ChatFrame" .. i]:IsShown() and visibleLine.messageInfo ~= TwitchEmotes_HoverMessageInfo) then 
-                    TwitchEmotesAnimator_UpdateEmoteInFontString(visibleLine, 28, 28);
-                end
+        TwitchEmotesAnimator_UpdateChatFrame(_G["ChatFrame1"]);
+        if (CHAT_FRAMES ~= nil) then
+            for _, chatFrameName in pairs(CHAT_FRAMES) do
+                TwitchEmotesAnimator_UpdateChatFrame(_G[chatFrameName]);
+            end
+        else
+            for i = 1, NUM_CHAT_WINDOWS do
+                TwitchEmotesAnimator_UpdateChatFrame(_G["ChatFrame" .. i]);
             end
         end
 
@@ -28,62 +45,43 @@ function TwitchEmotesAnimator_OnUpdate(self, elapsed)
 
         -- Update animated emotes in statistics screen
         if(TwitchStatsScreen:IsVisible()) then
-           
             local topSentImagePath = TwitchEmotes_defaultpack[TwitchEmoteSentStatKeys[1]] or "Interface\\AddOns\\TwitchEmotes\\Emotes\\1337.tga";
             local animdata = TwitchEmotes_animation_metadata[topSentImagePath:match("(Interface\\AddOns\\TwitchEmotes\\Emotes.-.tga)")]
-            
             if(animdata ~= nil) then
                 local cFrame = TwitchEmotes_GetCurrentFrameNum(animdata)
-                TwitchStatsScreen.topSentEmoteTexture:SetTexCoord(TwitchEmotes_GetTexCoordsForFrame(animdata, cFrame)) 
+                TwitchStatsScreen.topSentEmoteTexture:SetTexCoord(TwitchEmotes_GetTexCoordsForFrame(animdata, cFrame))
             end
-                
 
             local topSeenImagePath = TwitchEmotes_defaultpack[TwitchEmoteRecievedStatKeys[1]] or "Interface\\AddOns\\TwitchEmotes\\Emotes\\1337.tga";
             local animdata = TwitchEmotes_animation_metadata[topSeenImagePath:match("(Interface\\AddOns\\TwitchEmotes\\Emotes.-.tga)")]
             if(animdata ~= nil) then
                 local cFrame = TwitchEmotes_GetCurrentFrameNum(animdata)
-                TwitchStatsScreen.topSeenEmoteTexture:SetTexCoord(TwitchEmotes_GetTexCoordsForFrame(animdata, cFrame)) 
+                TwitchStatsScreen.topSeenEmoteTexture:SetTexCoord(TwitchEmotes_GetTexCoordsForFrame(animdata, cFrame))
             end
-            
 
             for line=1, 17 do
                 local sentEntry = getglobal("TwitchStatsSentEntry"..line)
                 local recievedEntry = getglobal("TwitchStatsRecievedEntry"..line)
-
                 if(sentEntry:IsVisible()) then
                     TwitchEmotesAnimator_UpdateEmoteInFontString(sentEntry, 16, 16);
                 end
-
                 if(recievedEntry:IsVisible()) then
                     TwitchEmotesAnimator_UpdateEmoteInFontString(recievedEntry, 16, 16);
                 end
             end
         end
-        
 
         TWITCHEMOTES_TimeSinceLastUpdate = 0;
     end
-
     TWITCHEMOTES_T = TWITCHEMOTES_T + elapsed
-    TWITCHEMOTES_TimeSinceLastUpdate = TWITCHEMOTES_TimeSinceLastUpdate +
-                                        elapsed;
+    TWITCHEMOTES_TimeSinceLastUpdate = TWITCHEMOTES_TimeSinceLastUpdate + elapsed;
 end
 
 local function escpattern(x)
     return (
-            --x:gsub('%%', '%%%%')
-             --:gsub('^%^', '%%^')
-             --:gsub('%$$', '%%$')
-             --:gsub('%(', '%%(')
-             --:gsub('%)', '%%)')
-             --:gsub('%.', '%%.')
-             --:gsub('%[', '%%[')
-             --:gsub('%]', '%%]')
-             --:gsub('%*', '%%*')
-             x:gsub('%+', '%%+')
-             :gsub('%-', '%%-')
-             --:gsub('%?', '%%?'))
-            )
+        x:gsub('%+', '%%+')
+         :gsub('%-', '%%-')
+    )
 end
 
 -- This will update the texture escapesequence of an animated emote
@@ -93,24 +91,23 @@ function TwitchEmotesAnimator_UpdateEmoteInFontString(fontstring, widthOverride,
     if (txt ~= nil) then
         for emoteTextureString in txt:gmatch("(|TInterface\\AddOns\\TwitchEmotes\\Emotes.-|t)") do
             local imagepath = emoteTextureString:match("|T(Interface\\AddOns\\TwitchEmotes\\Emotes.-.tga).-|t")
-
             local animdata = TwitchEmotes_animation_metadata[imagepath];
             if (animdata ~= nil) then
                 local framenum = TwitchEmotes_GetCurrentFrameNum(animdata);
                 local nTxt;
-		-- it is not an emote suggestion and it is a wide animated emote
-		if (widthOverride ~= 16 and animdata.frameWidth > 32) then
+                -- it is not an emote suggestion and it is a wide animated emote
+                if (widthOverride ~= 16 and animdata.frameWidth > 32) then
                     nTxt = txt:gsub(escpattern(emoteTextureString),
-                                        TwitchEmotes_BuildEmoteFrameStringWithDimensions(
-                                        imagepath, animdata, framenum, animdata.frameHeight, animdata.frameWidth))
-        elseif (widthOverride ~= nil or heightOverride ~= nil) then
+                        TwitchEmotes_BuildEmoteFrameStringWithDimensions(
+                            imagepath, animdata, framenum, animdata.frameHeight, animdata.frameWidth))
+                elseif (widthOverride ~= nil or heightOverride ~= nil) then
                     nTxt = txt:gsub(escpattern(emoteTextureString),
-                                        TwitchEmotes_BuildEmoteFrameStringWithDimensions(
-                                        imagepath, animdata, framenum, widthOverride, heightOverride))
+                        TwitchEmotes_BuildEmoteFrameStringWithDimensions(
+                            imagepath, animdata, framenum, widthOverride, heightOverride))
                 else
                     nTxt = txt:gsub(escpattern(emoteTextureString),
-                                      TwitchEmotes_BuildEmoteFrameString(
-                                        imagepath, animdata, framenum))
+                        TwitchEmotes_BuildEmoteFrameString(
+                            imagepath, animdata, framenum))
                 end
 
                 -- If we're updating a chat message we need to alter the messageInfo as wel
@@ -123,8 +120,6 @@ function TwitchEmotesAnimator_UpdateEmoteInFontString(fontstring, widthOverride,
         end
     end
 end
-
-
 
 function TwitchEmotes_GetAnimData(imagepath)
     return TwitchEmotes_animation_metadata[imagepath]
@@ -142,24 +137,22 @@ end
 function TwitchEmotes_BuildEmoteFrameString(imagepath, animdata, framenum)
     local top = framenum * animdata.frameHeight;
     local bottom = top + animdata.frameHeight;
-
     local emoteStr = "|T" .. imagepath .. ":" .. animdata.frameWidth .. ":" ..
-                        animdata.frameHeight .. ":0:0:" .. animdata.imageWidth ..
-                        ":" .. animdata.imageHeight .. ":0:" ..
-                        animdata.frameWidth .. ":" .. top .. ":" .. bottom ..
-                        "|t";
+        animdata.frameHeight .. ":0:0:" .. animdata.imageWidth ..
+        ":" .. animdata.imageHeight .. ":0:" ..
+        animdata.frameWidth .. ":" .. top .. ":" .. bottom ..
+        "|t";
     return emoteStr
 end
 
 function TwitchEmotes_BuildEmoteFrameStringWithDimensions(imagepath, animdata,
-                                                        framenum, framewidth,
-                                                        frameheight)
+    framenum, framewidth,
+    frameheight)
     local top = framenum * animdata.frameHeight;
     local bottom = top + animdata.frameHeight;
-
     local emoteStr = "|T" .. imagepath .. ":" .. framewidth .. ":" ..
-                        frameheight .. ":0:0:" .. animdata.imageWidth .. ":" ..
-                        animdata.imageHeight .. ":0:" .. animdata.frameWidth ..
-                        ":" .. top .. ":" .. bottom .. "|t";
+        frameheight .. ":0:0:" .. animdata.imageWidth .. ":" ..
+        animdata.imageHeight .. ":0:" .. animdata.frameWidth ..
+        ":" .. top .. ":" .. bottom .. "|t";
     return emoteStr
 end

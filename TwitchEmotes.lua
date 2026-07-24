@@ -228,8 +228,16 @@ local accept_stat_updates = false;
 local iconregistered = false
 local autocompleteInited = false
 local Broker_TwitchEmotes
-local origEnter, origLeave = {}, {}
 local _G = getfenv(0)
+local hookedHyperlinkFrames = {}
+function TwitchEmotes_HookChatFrameHyperlinks(frame)
+	if (frame == nil or hookedHyperlinkFrames[frame]) then
+		return
+	end
+	hookedHyperlinkFrames[frame] = true
+	frame:HookScript("OnHyperlinkEnter", Emoticons_OnHyperlinkEnter)
+	frame:HookScript("OnHyperlinkLeave", Emoticons_OnHyperlinkLeave)
+end
 function Emoticons_OnEvent(self, event, ...)
     if (event == "ADDON_LOADED" and select(1, ...) == "TwitchEmotes") then
         for k, v in pairs(origsettings) do
@@ -357,15 +365,16 @@ function Emoticons_OnEvent(self, event, ...)
         AllTwitchEmoteNames = {};
         Emoticons_SetAutoComplete(Emoticons_Settings["ENABLE_AUTOCOMPLETE"])
 
-        for i=1, NUM_CHAT_WINDOWS do
-            local frame = _G["ChatFrame"..i]
-
-            origEnter[frame] = frame:GetScript("OnHyperlinkEnter")
-            frame:SetScript("OnHyperlinkEnter", Emoticons_OnHyperlinkEnter)
-
-            origLeave[frame] = frame:GetScript("OnHyperlinkLeave")
-            frame:SetScript("OnHyperlinkLeave", Emoticons_OnHyperlinkLeave)
-        end
+		TwitchEmotes_HookChatFrameHyperlinks(_G["ChatFrame1"])
+		if (CHAT_FRAMES ~= nil) then
+				for _, chatFrameName in pairs(CHAT_FRAMES) do
+					TwitchEmotes_HookChatFrameHyperlinks(_G[chatFrameName])
+				end
+		else
+			for i=1, NUM_CHAT_WINDOWS do
+				TwitchEmotes_HookChatFrameHyperlinks(_G["ChatFrame"..i])
+			end
+		end
 
         -- add WIM Support
     elseif (event == "ADDON_LOADED" and select(1, ...) == "WIM" and Emoticons_Settings["ENABLE_AUTOCOMPLETE"]) then
@@ -895,13 +904,9 @@ function Emoticons_OnHyperlinkEnter(frame, link, message, fontstring, ...)
 			GameTooltip:Show();
 		end
 	end
-
-	if origEnter[frame] then return origEnter[frame](frame, link, message, fontstring, ...) end
 end
 
 function Emoticons_OnHyperlinkLeave(frame, ...)
 	GameTooltip:Hide()
     TwitchEmotes_HoverMessageInfo = nil
-
-	if origLeave[frame] then return origLeave[frame](frame, ...) end
 end
