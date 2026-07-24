@@ -238,6 +238,86 @@ function TwitchEmotes_HookChatFrameHyperlinks(frame)
 	frame:HookScript("OnHyperlinkEnter", Emoticons_OnHyperlinkEnter)
 	frame:HookScript("OnHyperlinkLeave", Emoticons_OnHyperlinkLeave)
 end
+
+-- Iterates over every active chat frame, including temporary windows (whisper popouts,
+-- combat log windows, etc.) that get created dynamically after login and are only ever
+-- tracked in CHAT_FRAMES, not within the fixed 1..NUM_CHAT_WINDOWS range. Only falls back
+-- to the fixed range if CHAT_FRAMES isn't available for some reason.
+function TwitchEmotes_ForEachChatFrame(fn)
+	if (CHAT_FRAMES ~= nil) then
+		for _, chatFrameName in pairs(CHAT_FRAMES) do
+			local frame = _G[chatFrameName]
+			if (frame ~= nil) then
+				fn(frame)
+			end
+		end
+	else
+		for i=1, NUM_CHAT_WINDOWS do
+			local frame = _G["ChatFrame"..i]
+			if (frame ~= nil) then
+				fn(frame)
+			end
+		end
+	end
+end
+
+local hookedAutoCompleteFrames = {}
+function TwitchEmotes_SetupAutoCompleteForFrame(frame)
+	if (frame == nil or hookedAutoCompleteFrames[frame]) then
+		return
+	end
+	local editbox = frame.editBox;
+	if (editbox == nil) then
+		return
+	end
+	hookedAutoCompleteFrames[frame] = true
+
+	local suggestionList = AllTwitchEmoteNames;
+	local maxButtonCount = 20;
+
+	local autocompletesettings = {
+		perWord = true,
+		activationChar = ':',
+		closingChar = ':',
+		minChars = 2,
+		fuzzyMatch = true,
+		onSuggestionApplied = function(suggestion)
+			UpdateEmoteStats(suggestion, true, false, false);
+		end,
+		renderSuggestionFN = Emoticons_RenderSuggestionFN,
+		suggestionBiasFN = function(suggestion, text)
+			--Bias the sorting function towards the most autocompleted emotes
+			if TwitchEmoteStatistics[suggestion] ~= nil then
+				return TwitchEmoteStatistics[suggestion][1] * 5
+			end
+			return 0;
+		end,
+		interceptOnEnterPressed = true,
+		addSpace = true,
+		useTabToConfirm = Emoticons_Settings["AUTOCOMPLETE_CONFIRM_WITH_TAB"],
+		useArrowButtons = true,
+	}
+
+	SetupAutoComplete(editbox, suggestionList, maxButtonCount, autocompletesettings);
+end
+
+-- Runs independently of whether animated emotes are enabled, so hyperlink hover/click
+-- support and emote autocomplete still reach newly-created temporary chat windows (e.g.
+-- whisper popouts) even if the user has disabled emote animation.
+local TwitchEmotes_N_CHATFRAMES = 0;
+function TwitchEmotes_Watcher_OnUpdate(self, elapsed)
+	local nChatFrames = (CHAT_FRAMES ~= nil) and #CHAT_FRAMES or NUM_CHAT_WINDOWS;
+	if (nChatFrames ~= TwitchEmotes_N_CHATFRAMES) then
+		TwitchEmotes_N_CHATFRAMES = nChatFrames
+		TwitchEmotes_ForEachChatFrame(function(frame)
+			TwitchEmotes_HookChatFrameHyperlinks(frame)
+			if (Emoticons_Settings["ENABLE_AUTOCOMPLETE"] and autocompleteInited) then
+				TwitchEmotes_SetupAutoCompleteForFrame(frame)
+			end
+		end)
+	end
+end
+
 function Emoticons_OnEvent(self, event, ...)
     if (event == "ADDON_LOADED" and select(1, ...) == "TwitchEmotes") then
         for k, v in pairs(origsettings) do
@@ -333,6 +413,12 @@ function Emoticons_OnEvent(self, event, ...)
         TwitchEmotesAnimatorUpdateFrame = CreateFrame("Frame", "TwitchEmotesAnimator_EventFrame", UIParent)
         Emoticons_EnableAnimatedEmotes(Emoticons_Settings["ENABLE_ANIMATEDEMOTES"])
 
+        -- Always runs, regardless of the animated-emotes setting, so newly created chat
+        -- windows (e.g. whisper popouts) still get hyperlink hover/click support and
+        -- autocomplete.
+        TwitchEmotesWatcherFrame = CreateFrame("Frame", "TwitchEmotes_WatcherFrame", UIParent)
+        TwitchEmotesWatcherFrame:SetScript('OnUpdate', TwitchEmotes_Watcher_OnUpdate)
+
         -- layout is TwitchEmoteStatistics[emote] = {nrTimesAutoCompleted, nrTimesSent, nrTimesSeen}
         TwitchEmoteStatistics = TwitchEmoteStatistics or {}; -- saved in savedvariables. (might slow ui loading if the dict gets big?)
         
@@ -365,16 +451,7 @@ function Emoticons_OnEvent(self, event, ...)
         AllTwitchEmoteNames = {};
         Emoticons_SetAutoComplete(Emoticons_Settings["ENABLE_AUTOCOMPLETE"])
 
-		TwitchEmotes_HookChatFrameHyperlinks(_G["ChatFrame1"])
-		if (CHAT_FRAMES ~= nil) then
-				for _, chatFrameName in pairs(CHAT_FRAMES) do
-					TwitchEmotes_HookChatFrameHyperlinks(_G[chatFrameName])
-				end
-		else
-			for i=1, NUM_CHAT_WINDOWS do
-				TwitchEmotes_HookChatFrameHyperlinks(_G["ChatFrame"..i])
-			end
-		end
+		TwitchEmotes_ForEachChatFrame(TwitchEmotes_HookChatFrameHyperlinks)
 
         -- add WIM Support
     elseif (event == "ADDON_LOADED" and select(1, ...) == "WIM" and Emoticons_Settings["ENABLE_AUTOCOMPLETE"]) then
@@ -616,14 +693,12 @@ end
 
 function Emoticons_SetConfirmWithTab(state)
     Emoticons_Settings["AUTOCOMPLETE_CONFIRM_WITH_TAB"] = state;
-    for i=1, NUM_CHAT_WINDOWS do
-        local frame = _G["ChatFrame"..i]
-
+    TwitchEmotes_ForEachChatFrame(function(frame)
         local editbox = frame.editBox;
         if editbox ~= nil and editbox.settings ~= nil then
             editbox.settings.useTabToConfirm = Emoticons_Settings["AUTOCOMPLETE_CONFIRM_WITH_TAB"];
         end
-    end
+    end)
 end
 
 function Emoticons_SetLargeEmotes(state)
@@ -673,41 +748,9 @@ function Emoticons_SetAutoComplete(state)
         --Sort the list alphabetically
         table.sort(AllTwitchEmoteNames)
 
-        for i=1, NUM_CHAT_WINDOWS do
-            local frame = _G["ChatFrame"..i]
-
-            local editbox = frame.editBox;
-            local suggestionList = AllTwitchEmoteNames;
-            local maxButtonCount = 20;
-
-            local autocompletesettings = {
-                perWord = true,
-                activationChar = ':',
-                closingChar = ':',
-                minChars = 2,
-                fuzzyMatch = true,
-                onSuggestionApplied = function(suggestion)
-                    UpdateEmoteStats(suggestion, true, false, false);
-                end,
-                renderSuggestionFN = Emoticons_RenderSuggestionFN,
-                suggestionBiasFN = function(suggestion, text)
-                    --Bias the sorting function towards the most autocompleted emotes
-                    if TwitchEmoteStatistics[suggestion] ~= nil then
-                        return TwitchEmoteStatistics[suggestion][1] * 5
-                    end
-                    return 0;
-                end,
-                interceptOnEnterPressed = true,
-                addSpace = true,
-                useTabToConfirm = Emoticons_Settings["AUTOCOMPLETE_CONFIRM_WITH_TAB"],
-                useArrowButtons = true,
-            }
-
-            SetupAutoComplete(editbox, suggestionList, maxButtonCount, autocompletesettings);
-            
-        end
-    
         autocompleteInited = true;
+
+        TwitchEmotes_ForEachChatFrame(TwitchEmotes_SetupAutoCompleteForFrame)
     end
 
 end
@@ -848,8 +891,6 @@ function Emoticons_SetType(chattype, state)
     Emoticons_Settings[chattype] = state;
     Emoticons_UpdateChatFilters();
 end
-
-b = CreateFrame("Button", "TestButton", ChatFrame1, "UIPanelButtonTemplate");
 
 function Emoticons_RegisterPack(name, newEmoticons, pack)
     for k, v in pairs(newEmoticons) do

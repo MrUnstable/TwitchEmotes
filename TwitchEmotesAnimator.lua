@@ -126,6 +126,14 @@ function TwitchEmotes_GetAnimData(imagepath)
 end
 
 function TwitchEmotes_GetCurrentFrameNum(animdata)
+    if (animdata.pingpong) then
+        local vframen = math.floor((TWITCHEMOTES_T * animdata.framerate) % ((animdata.nFrames * 2) - 1));
+        if vframen > animdata.nFrames then
+            vframen = animdata.nFrames - (vframen % animdata.nFrames)
+        end
+        return vframen
+    end
+
     return math.floor((TWITCHEMOTES_T * animdata.framerate) % animdata.nFrames);
 end
 
